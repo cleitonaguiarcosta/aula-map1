@@ -1,7 +1,8 @@
 import React from 'react'
+import App from '../App'
 
-class Aluno extends React.Component{
-    constructor(props){
+export default class Aluno extends React.Component{
+constructor(props){
         super(props);
 
         this.state={
@@ -100,22 +101,37 @@ class Aluno extends React.Component{
                 nome: 'Cassio',
                 idade: 21,
                 polo: 'prazeres',
-                }
-            ] 
+                },
+            ], 
         } 
      }        
- }
+ 
 
 
- listarAlunos = () => {
-    this.state.alunos.map(item => {
-        console.log(item.nome);
-        return null;
-    })
-}
-render() {
-    return (
-        <button onClick={this.listarAlunos}>START</button>
-    )
-    }
-}
+//  listarAlunos = () => {
+//     this.state.alunos.map(item => {
+//         console.log(item.nome);
+//         return null;
+//     })
+
+        render(){ 
+                return(
+                    <div className = "caixa">
+                        {this.state.aluno.map((aluno, index) => { 
+                            return( 
+                                <div className = 'bloco' key = {index}> 
+                                    <h1>{aluno.nome}</h1> 
+                                    <p>{aluno.idade}</p>
+                                </div>
+                            );
+                       })}
+
+                    </div>
+                    // <button onClick={this.listarAlunos}>START</button>
+
+                    )
+                }
+            }
+                
+                
+            
