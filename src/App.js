@@ -1,16 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import  './App.css';
-import Aluno from  './components/Aluno';
+import React from 'react'; 
+import './App.css';
 
-function App(){
-    return( 
-        <div className="App-header">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <Aluno></Aluno>
-            </header>
-       </div>
-    );
-}
+import Menu from './components/Menu';
+
+class App extends React.Component{
+    constructor(props){
+        super(props);
+
+        this.state = {
+            imagem: [
+                'logo 01',
+                'logo 02',
+                'logo 03',
+            ],
+            renderizado: '',
+        };
+    }
+ 
+render() {
+    return(
+        <div className="App">
+             <Menu imagem={this.state.imagem}/>
+        </div>
+    ); 
+  }
+ }
 export default App;
