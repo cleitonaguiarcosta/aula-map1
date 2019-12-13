@@ -8,19 +8,27 @@ class App extends React.Component{
         super(props);
 
         this.state = {
-            imagem: [
-                'logo 01',
-                'logo 02',
-                'logo 03',
+            eventos: [
+                'paisagen 01',
+                'paisagen 02',
+                'paisagen 03',
             ],
             renderizado: '',
         };
+    }
+
+    renderizado = (eventos) => {
+        this.setState({ 
+            alteracoes:eventos,
+             });
     }
  
 render() {
     return(
         <div className="App">
-             <Menu imagem={this.state.imagem}/>
+             <Menu eventos={this.state.eventos}
+             eventos={this.eventos}
+             />
         </div>
     ); 
   }
